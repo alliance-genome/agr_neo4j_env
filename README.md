@@ -20,6 +20,8 @@ This will make it so that there is a agr_neo4j_env container available via Docke
 
 In order to make changes and test them you might want to create a "develop" container. To do this you can use commands available in the Makefile:
 
+*These are commands done on the development machine. If you are developing locally feel free to use the commands but don't push to DockerHub
+
 ## Bulding develop container
 ```bash
 make all

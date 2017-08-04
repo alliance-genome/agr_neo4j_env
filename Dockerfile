@@ -1,4 +1,4 @@
-FROM neo4j:3.0
+FROM neo4j:3.2
 
 ENV DEBIAN_FRONTEND noninteractive
 

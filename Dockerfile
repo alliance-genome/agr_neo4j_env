@@ -1,7 +1,5 @@
 FROM neo4j:3.2-enterprise
 
-ENV DEBIAN_FRONTEND noninteractive
-
 ADD neo4j-graphql-0.1-SNAPSHOT.jar plugins
 ADD apoc-3.2.0.4-all.jar plugins
 

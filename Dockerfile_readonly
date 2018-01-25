@@ -1,0 +1,3 @@
+FROM agrdocker/agr_neo4j_qc_data_image
+
+RUN echo 'dbms.read_only=true' >> /var/lib/neo4j/conf/neo4j.conf

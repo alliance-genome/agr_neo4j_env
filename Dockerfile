@@ -9,4 +9,4 @@ RUN echo 'dbms.memory.pagecache.size=8g' >> /var/lib/neo4j/conf/neo4j.conf
 
 RUN rm data
 RUN mkdir data
-RUN chown 112.nogroup data
+RUN chown neo4j.neo4j data

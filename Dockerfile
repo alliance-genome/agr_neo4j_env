@@ -25,4 +25,5 @@ ENV NEO4J_dbms_connectors_default__listen__address ${NEO4J_dbms_connectors_defau
 RUN rm data
 RUN mkdir -p data/databases/graph.db
 RUN chown -R neo4j.neo4j data
+RUN mkdir /logs
 RUN chown -R neo4j.neo4j /logs

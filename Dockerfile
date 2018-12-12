@@ -1,11 +1,12 @@
-FROM neo4j:3.4-enterprise
+FROM neo4j:3.5-enterprise
 
-ADD neo4j-graphql-0.1-SNAPSHOT.jar plugins
-ADD apoc-3.4.0.1-all.jar plugins
+ADD neo4j-graphql-3.5.0.1.jar plugins
+ADD apoc-3.5.0.1-all.jar plugins
 
 RUN echo 'dbms.unmanaged_extension_classes=org.neo4j.graphql=/graphql' >> /var/lib/neo4j/conf/neo4j.conf
 RUN echo 'dbms.security.auth_enabled=false' >> /var/lib/neo4j/conf/neo4j.conf
-RUN echo 'dbms.memory.pagecache.size=4g' >> /var/lib/neo4j/conf/neo4j.conf
+RUN echo 'dbms.tx_state.memory_allocation=OFF_HEAP' >> /var/lib/neo4j/conf/neo4j.conf
+RUN echo 'dbms.tx_state.max_off_heap_memory=0' >> /var/lib/neo4j/conf/neo4j.conf
 RUN echo 'dbms.connector.bolt.thread_pool_min_size=20' >> /var/lib/neo4j/conf/neo4j.conf
 RUN echo 'dbms.connector.bolt.thread_pool_max_size=100' >> /var/lib/neo4j/conf/neo4j.conf
 RUN echo 'dbms.connector.bolt.thread_pool_keep_alive=10m' >> /var/lib/neo4j/conf/neo4j.conf

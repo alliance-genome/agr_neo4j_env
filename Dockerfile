@@ -21,3 +21,7 @@ ENV NEO4J_AUTH ${NEO4J_AUTH}
 
 ARG NEO4J_dbms_connectors_default__listen__address=0.0.0.0
 ENV NEO4J_dbms_connectors_default__listen__address ${NEO4J_dbms_connectors_default__listen__address}
+
+RUN rm data
+RUN mkdir -p data/databases/graph.db
+RUN chown -R neo4j.neo4j data

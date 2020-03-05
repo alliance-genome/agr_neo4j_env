@@ -1,4 +1,4 @@
-FROM neo4j:3.5.14-enterprise
+FROM neo4j:3.5-enterprise
 
 ADD neo4j-graphql-3.5.0.1.jar plugins
 ADD apoc-3.5.0.1-all.jar plugins

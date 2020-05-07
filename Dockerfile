@@ -13,6 +13,7 @@ RUN echo 'dbms.connector.bolt.thread_pool_keep_alive=10m' >> /var/lib/neo4j/conf
 #RUN echo 'dbms.security.procedures.unrestricted=algo.*,apoc.*' >> /var/lib/neo4j/conf/neo4j.conf
 RUN echo 'cypher.min_replan_interval=120000ms' >> /var/lib/neo4j/conf/neo4j.conf
 RUN echo 'cypher.statistics_divergence_threshold=0.9' >> /var/lib/neo4j/conf/neo4j.conf
+RUN cat /docker-entrypoint.sh | grep -v dbms.memory.pagecache.size > /temp_file && mv /temp_file /docker-entrypoint.sh
 
 ARG NEO4J_ACCEPT_LICENSE_AGREEMENT=yes
 ENV NEO4J_ACCEPT_LICENSE_AGREEMENT ${NEO4J_ACCEPT_LICENSE_AGREEMENT}

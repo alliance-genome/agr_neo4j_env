@@ -22,7 +22,7 @@ In order to make changes and test them you might want to create a "develop" cont
 
 *These are commands done on the development machine. If you are developing locally feel free to use the commands but don't push to ECR
 
-## Bulding develop container
+## Building develop container
 ```bash
 make all
 ```

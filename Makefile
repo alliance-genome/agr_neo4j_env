@@ -25,9 +25,3 @@ bash:
 
 run:
 	docker run -p 7474:7474 -p 7687:7687 -e NEO4J_dbms_memory_heap_maxSize=8g ${REG}/agr_neo4j_env:${VERSION}
-
-docker-data-pull:
-	docker pull agrdocker/agr_neo4j_qc_data_image
-
-docker-data-run:
-	docker run -p 7474:7474 -p 7687:7687 -e NEO4J_dbms_memory_heap_maxSize=8g agrdocker/agr_neo4j_qc_data_image

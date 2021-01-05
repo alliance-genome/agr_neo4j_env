@@ -13,8 +13,8 @@ git hf release finish <version>
 After a version has been created the user should create a tagged docker container with the following command
 
 ```bash
-docker build -t agrdocker/agr_neo4j_env:<version> .
-docker docker push agrdocker/agr_neo4j_env:<version>
+make all VERSION=<version>
+make push VERSION=<version>
 ```
 This will make it so that there is a agr_neo4j_env container available via DockerHub. If you would like to use this version feel free to specify the version in the agr_neo4j's Dockerfile. The agr_loader Dockerfile should specify a specific version when pushing code to develop. This way we will know exactly what is running in dev, staging and production environments.  
 

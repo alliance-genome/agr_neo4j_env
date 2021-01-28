@@ -1,16 +1,9 @@
 # AGR Loader Environment Documentation
 
-This repo follows the HubFlow conventions for releasing the versions of the code as specified here: [HubFlow](https://datasift.github.io/gitflow/)
+This repository does not follow the standard AGR branching strategy, but instead adopts a NEO4j release based branching as `neo-x.y`.
+In doing so, it supports an automatic stable GoCD build from such NEO4j versioned branch(es) for use in the staging (and production) environments, while enabling testing of new NEO4j versions on the build environment (on other branches). Any updates within a neo4j release should be done on the matching `neo-x.y` branch, and then merged into master.
 
-Versions of this repos do not need to be done at the same time as the agr_neo4j. When the developer is ready to make a verions of the code they should use the following command.
-
-```bash
-git hf init
-git hf release start <version>
-git hf release finish <version>
-```
-
-After a version has been created the user should create a tagged docker container with the following command
+After a version has been created, the user should create a tagged docker container with the following command
 
 ```bash
 make all VERSION=<version>

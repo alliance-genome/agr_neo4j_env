@@ -13,6 +13,7 @@ ADD apoc-4.4.0.8-all.jar plugins
 # not used RUN echo 'dbms.security.procedures.unrestricted=algo.*,apoc.*' >> /var/lib/neo4j/conf/neo4j.conf
 # RUN echo 'cypher.min_replan_interval=120000ms' >> /var/lib/neo4j/conf/neo4j.conf
 # RUN echo 'cypher.statistics_divergence_threshold=0.9' >> /var/lib/neo4j/conf/neo4j.conf
+RUN echo 'dbms.memory.pagecache.size=24GB' >> /var/lib/neo4j/conf/neo4j.conf
 # RUN cat /docker-entrypoint.sh | grep -v dbms.memory.pagecache.size > /temp_file && mv /temp_file /docker-entrypoint.sh && chmod +x /docker-entrypoint.sh
 
 ARG NEO4J_ACCEPT_LICENSE_AGREEMENT=yes

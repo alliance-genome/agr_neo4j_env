@@ -1,5 +1,5 @@
 REG := 100225593120.dkr.ecr.us-east-1.amazonaws.com
-VERSION := latest
+VERSION := 4.4.9-enterprise
 
 registry-docker-login:
 ifneq ($(shell echo ${REG} | egrep "ecr\..+\.amazonaws\.com"),)

@@ -7,6 +7,7 @@ ADD apoc-4.4.0.8-all.jar plugins
 RUN echo 'dbms.tx_state.memory_allocation=OFF_HEAP' >> /var/lib/neo4j/conf/neo4j.conf
 RUN echo 'dbms.memory.off_heap.max_size=0' >> /var/lib/neo4j/conf/neo4j.conf
 RUN echo 'dbms.import.csv.buffer_size=134217728' >> /var/lib/neo4j/conf/neo4j.conf
+RUN echo 'dbms.memory.heap.max_size=48GB' >> /var/lib/neo4j/conf/neo4j.conf
 # RUN echo 'dbms.connector.bolt.thread_pool_min_size=20' >> /var/lib/neo4j/conf/neo4j.conf
 # RUN echo 'dbms.connector.bolt.thread_pool_max_size=100' >> /var/lib/neo4j/conf/neo4j.conf
 # RUN echo 'dbms.connector.bolt.thread_pool_keep_alive=10m' >> /var/lib/neo4j/conf/neo4j.conf

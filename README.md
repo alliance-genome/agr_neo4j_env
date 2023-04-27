@@ -34,5 +34,7 @@ make pull
 make bash
 ```
 
+# Neo4j Configuration File
+The default configuration file included in this repository is for references purposes and is not explicitly used in building the image.
 
 

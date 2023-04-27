@@ -1,5 +1,5 @@
 REG := 100225593120.dkr.ecr.us-east-1.amazonaws.com
-VERSION := latest
+VERSION := 5.5.0-enterprise
 
 registry-docker-login:
 ifneq ($(shell echo ${REG} | egrep "ecr\..+\.amazonaws\.com"),)
@@ -24,4 +24,4 @@ bash:
 	docker run -t -i ${REG}/agr_neo4j_env:${VERSION} bash
 
 run:
-	docker run -p 7474:7474 -p 7687:7687 -e NEO4J_dbms_memory_heap_maxSize=8g ${REG}/agr_neo4j_env:${VERSION}
+	docker run -p 7474:7474 -p 7687:7687 ${REG}/agr_neo4j_env:${VERSION}

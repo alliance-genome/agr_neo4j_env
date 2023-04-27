@@ -6,7 +6,7 @@ ADD apoc-5.5.0-extended.jar plugins
 RUN echo 'db.tx_state.memory_allocation=OFF_HEAP' >> /var/lib/neo4j/conf/neo4j.conf
 RUN echo 'server.memory.off_heap.max_size=0' >> /var/lib/neo4j/conf/neo4j.conf
 RUN echo 'db.import.csv.buffer_size=134217728' >> /var/lib/neo4j/conf/neo4j.conf
-RUN echo 'server.jvm.additional=-XX:+ExitOnOutOfMemoryError'
+RUN echo 'server.jvm.additional=-XX:+ExitOnOutOfMemoryError' >> /var/lib/neo4j/conf/neo4j.conf
 
 # Obsoleted commands are listed below for reference.
 # RUN cat /docker-entrypoint.sh | grep -v dbms.memory.pagecache.size > /temp_file && mv /temp_file /docker-entrypoint.sh && chmod +x /docker-entrypoint.sh

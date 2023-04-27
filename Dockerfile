@@ -17,6 +17,12 @@ RUN echo 'server.jvm.additional=-XX:+ExitOnOutOfMemoryError' >> /var/lib/neo4j/c
 # not used RUN echo 'dbms.unmanaged_extension_classes=org.neo4j.graphql=/graphql' >> /var/lib/neo4j/conf/neo4j.conf
 # RUN echo 'dbms.security.auth_enabled=false' >> /var/lib/neo4j/conf/neo4j.conf
 
+# Old memory settings we might not need anymore?
+# RUN echo 'db.tx_state.memory_allocation=OFF_HEAP' >> /var/lib/neo4j/conf/neo4j.conf
+# RUN echo 'server.memory.off_heap.max_size=0' >> /var/lib/neo4j/conf/neo4j.conf
+# RUN echo 'server.memory.heap.max_size=48GB' >> /var/lib/neo4j/conf/neo4j.conf
+# RUN echo 'server.memory.pagecache.size=24GB' >> /var/lib/neo4j/conf/neo4j.conf
+
 ARG NEO4J_ACCEPT_LICENSE_AGREEMENT=yes
 ENV NEO4J_ACCEPT_LICENSE_AGREEMENT ${NEO4J_ACCEPT_LICENSE_AGREEMENT}
 

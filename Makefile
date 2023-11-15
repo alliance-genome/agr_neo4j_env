@@ -25,3 +25,9 @@ bash:
 
 run:
 	docker run -p 7474:7474 -p 7687:7687 ${REG}/agr_neo4j_env:${VERSION}
+
+eb-init:
+	eb init --region us-east-1 -p Docker neo4j-server
+
+eb-create:
+	@eb create neo4j-stage --region=us-east-1 --cname="neo4j-stage" --elb-type application

@@ -1,0 +1,21 @@
+version: "3.2"
+
+services:
+  curation.app:
+    container_name: agr.stage.neo4j.server
+    image: 100225593120.dkr.ecr.us-east-1.amazonaws.com/agr_neo4j_data_image:stage
+    logging:
+      driver: gelf
+      options:
+        gelf-address: 'udp://logs.alliancegenome.org:12201'
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    networks:
+      - stage
+    env_file:
+      - .env
+
+networks:
+  # The presence of these objects is sufficient to define them
+  stage:

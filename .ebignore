@@ -1,0 +1,10 @@
+.git
+.gitignore
+Dockerfile
+Dockerfile_readonly
+LICENSE
+Makefile
+README.md
+apoc-5.5.0-core.jar
+apoc-5.5.0-extended.jar
+neo4j-5.5.0-default.conf
